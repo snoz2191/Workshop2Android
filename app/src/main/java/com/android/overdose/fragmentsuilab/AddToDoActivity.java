@@ -42,17 +42,17 @@ public class AddToDoActivity extends Activity implements AddToDoFragment.OnFragm
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.add_todo_activity);
 
-        //TODO: Create a new instance of ToDOManagerFragment and store it on the mManagerFragment
+        //TODO: Create a new instance of AddToDoFragment and store it on the mManagerFragment
         //variable
-        maddToDoFragment = null;
+        maddToDoFragment = new AddToDoFragment();
 
         //TODO: Get a Reference to the Fragment Manager using getFragmentManager()
-
+        FragmentManager manager = getFragmentManager();
         //TODO: Create a Fragment Transaction using the Fragment Manager's beginTransaction() method
-
+        FragmentTransaction fragmentTransaction = manager.beginTransaction();
         //TODO: Add to the transaction the Fragment to be added on R.id.manager and commit it
-
-
+        fragmentTransaction.add(R.id.add_todo, maddToDoFragment);
+        fragmentTransaction.commit();
 	}
 
     @Override

@@ -129,16 +129,16 @@ public class ToDoListAdapter extends BaseAdapter {
 		// TODO - Display Priority in a TextView
         //Hint: Use itemLayout to find the TextView
 
-		final TextView priorityView = (TextView) null;
-        priorityView.setText("");
+		final TextView priorityView = (TextView) itemLayout.findViewById(R.id.priorityView);
+        priorityView.setText(toDoItem.getPriority().toString());
 
 		// TODO - Display Time and Date.
         //Hint: Use itemLayout again to find the TextView
 		// Hint - use ToDoItem.FORMAT.format(toDoItem.getDate()) to get date and
 		// time String
 
-		final TextView dateView = (TextView) null;
-        dateView.setText("");
+		final TextView dateView = (TextView) itemLayout.findViewById(R.id.dateView);
+        dateView.setText(ToDoItem.FORMAT.format(toDoItem.getDate()));
 
 		// Return the View you just created
 		return itemLayout;

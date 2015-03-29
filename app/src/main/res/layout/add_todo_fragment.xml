@@ -90,6 +90,11 @@
             to string.xml-->
 
         <!--TODO: Their id's mut be lowPriority and highPriority -->
+        <RadioButton
+            android:id="@+id/lowPriority"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/priority_low_string" />
 
         <RadioButton
             android:id="@+id/medPriority"
@@ -98,6 +103,11 @@
             android:checked="true"
             android:text="@string/priority_medium_string" />
 
+        <RadioButton
+            android:id="@+id/highPriority"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/priority_high_string" />
     </RadioGroup>
 
     <!-- Time and Date -->
@@ -137,12 +147,20 @@
         Hint 3: For the Text use the reference in strings.xml
     -->
 
+    <Button
+        android:id="@+id/date_picker_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/date"
+        android:text="@string/choose_date_string" />
 
     <Button
         android:id="@+id/time_picker_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/date_picker_button"
         android:layout_below="@id/time"
         android:text="@string/choose_time_string" />
 

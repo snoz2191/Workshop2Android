@@ -126,6 +126,7 @@ public class AddToDoFragment extends Fragment {
                 //TODO:
                 //Indicate result and finish
                 //Hint: onCanceled method of the listener
+                mListener.onCanceled();
             }
         });
 
@@ -137,7 +138,7 @@ public class AddToDoFragment extends Fragment {
 
                 //TODO: Clear the mTitleText
                 //Hint: use getText() and find a way to clear it
-
+                mTitleText.getText().clear();
                 //Reset data to default values
                 mStatusRadioGroup.check(mDefaultStatusButton.getId());
                 mPriorityRadioGroup.check(mDefaultPriorityButton.getId());
@@ -169,6 +170,7 @@ public class AddToDoFragment extends Fragment {
                 //TODO:
                 //Return data Intent and finish
                 //Hint: Check onSubmit method on the listener
+                mListener.onSubmit(titleString, priority, status, fullDate);
             }
         });
 

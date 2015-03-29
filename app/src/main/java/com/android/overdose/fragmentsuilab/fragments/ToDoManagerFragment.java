@@ -64,12 +64,11 @@ public class ToDoManagerFragment extends ListFragment {
         // Create a new TodoListAdapter for this ListActivity's ListView
         // and assign it to the mAdapter variable
         //Hint: use getActivity to get the Context
-        mAdapter = null;
+        mAdapter = new ToDoListAdapter(getActivity());
 
         //TODO:
         //Attach the adapter to this ListActivity's ListView via the setListAdapter method
-
-
+        setListAdapter(mAdapter);
         return super.onCreateView(inflater, container, savedInstanceState);
     }
 
@@ -84,11 +83,12 @@ public class ToDoManagerFragment extends ListFragment {
         //Inflate footerView for footer_view.xml file
         //Use getActivity().getLayoutInflater() and the .inflate method
         TextView footerView = null;
-        footerView = (TextView) null;
+        footerView = (TextView) getActivity().getLayoutInflater().inflate(R.layout.footer_view,null);
 
         //TODO:
         //Add footerView to ListView  (addFooterView method)
         //Hint: Notice how I get the ListView to set the divider in the lines above.
+        getListView().addFooterView(footerView);
 
         footerView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,6 +96,7 @@ public class ToDoManagerFragment extends ListFragment {
                 Log.i(TAG, "Entered footerView.OnClickListener.onClick()");
                 //TODO:
                 //Implement OnClick(). Call the listener for the transition
+                mListener.onFragmentInteraction();
             }
         });
     }

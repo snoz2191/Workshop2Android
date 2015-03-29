@@ -29,15 +29,15 @@ public class ToDoManagerActivity extends FragmentActivity implements ToDoManager
 
         //TODO: Create a new instance of ToDOManagerFragment and store it on the mManagerFragment
         //variable
-        mManagerFragment = null;
+        mManagerFragment = new ToDoManagerFragment();
 
         //TODO: Get a Reference to the Fragment Manager using getFragmentManager()
-
+        FragmentManager manager = getFragmentManager();
         //TODO: Create a Fragment Transaction using the Fragment Manager's beginTransaction() method
-
+        FragmentTransaction fragmentTransaction = manager.beginTransaction();
         //TODO: Add to the transaction the Fragment to be added on R.id.manager and commit it
-
-
+        fragmentTransaction.add(R.id.manager, mManagerFragment);
+        fragmentTransaction.commit();
 	}
 
     @Override
